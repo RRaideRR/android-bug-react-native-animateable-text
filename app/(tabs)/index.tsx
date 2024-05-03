@@ -1,9 +1,11 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import React from 'react';
+import { Image } from 'expo-image';
 
 export default function HomeScreen() {
   return (
@@ -11,8 +13,11 @@ export default function HomeScreen() {
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
+          source={'https://storage.googleapis.com/unlikeany-dev.appspot.com/test-9d52f8a6-51aa-4383-ac27-8bf3de1b9386/portrait_prompts/fc84e221-d86f-46be-b3bf-dec080867246.avif?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=firebase-adminsdk-z6ufh%40unlikeany-dev.iam.gserviceaccount.com%2F20240503%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240503T105103Z&X-Goog-Expires=604800&X-Goog-SignedHeaders=host&X-Goog-Signature=3deae3a87b5f4abfd61da5e00399eee2746eff3d6df133c0c1846e13ec0c8c21aeb036e8cf06faaf6dfaab77b42952e47e684f1ea7b2b59177fd0945fdf8acea0a8f92fe4f58badef005918faa0544bfe77c93470197ed46ef42969cdc056c81b75d8e4e4b660a6f4c3448824cadcc01fe2de266fd9ec5adc6b441993248937af83ec463ecfe6c08e65aef1d2eeeb521e4b845405ab965394ad6331fc13f459e443b1307b828323d782c3e0b29bd3e5d3e8ade07c7e9895cdd64e9c9255931380760ff5c2be81f2f82ae0ea2459d7d33a859f7dfec4321815b996a8667b7a8544bc11e008406672d9531e7f8914981954676e189ebed274b32d553772f13b7b1'}
           style={styles.reactLogo}
+          onError={(e) => {
+            console.log(e)
+          }}
         />
       }>
       <ThemedView style={styles.titleContainer}>
