@@ -1,25 +1,17 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet, Platform, Image } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import React from 'react';
-import { Image } from 'expo-image';
 
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/test.avif')}
-          style={styles.reactLogo}
-          onError={(e) => {
-            console.log(e)
-          }}
-        />
-      }>
+      headerImage={require('@assets/images/react-logo.png')}
+>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
